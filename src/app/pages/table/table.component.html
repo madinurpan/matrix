@@ -1,0 +1,39 @@
+<table class="table-header-rotated" style="border: 1px solid black">
+    <thead>
+    <tr>
+      <!-- First column header is not rotated -->
+      <th></th>
+      <th></th>
+      <!-- Following headers are rotated -->
+      <th class="rotate" *ngFor="let member of [].constructor(20); let i = index">
+        <div><span>{{members[i]}}</span></div>
+      </th>
+      <th colSpan="2">
+        <span style="font-size: 1.2rem">  Общая сумма</span>
+        <br>
+        <span style="font-size: 1.2rem">  0 | 0</span>
+
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="border: none"></td>
+      <td></td>
+      <td *ngFor="let member of [].constructor(20); let i1 = index">
+       <span style="font-size: 1.2rem"> {{i1+1}}</span>
+      </td>
+      <td>Количество выборов</td>
+      <td>Количество взаимных выборов</td>
+    </tr>
+    <tr style="  white-space: nowrap;"  *ngFor="let member of [].constructor(20); let i1 = index">
+      <th class="row-header">{{members[i1]}}</th>
+      <td>  <span style="font-size: 1.2rem"> {{i1+1}}</span></td>
+      <td *ngFor="let member of [].constructor(20); let i2 = index" [class.none0]="(i2+1)/(i1+1) === 1">
+      </td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    </tbody>
+  </table>
+

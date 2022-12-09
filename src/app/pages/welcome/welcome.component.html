@@ -1,0 +1,31 @@
+<div nz-row nzJustify="start" nzAlign="middle">
+  <div nz-col nzSpan="3"><app-upload></app-upload></div>
+  <div nz-col nzSpan="9">
+    <nz-select [(ngModel)]="question" >
+      <ng-container *ngFor="let question of questions | keyvalue;">
+        <nz-option [nzValue]="+question.key" [nzLabel]="question.value"></nz-option>
+      </ng-container>
+    </nz-select>
+  </div>
+  <div nz-col nzSpan="12">
+    <div style="float: right">
+      <nz-tag [nzColor]="'#87d068'">
+        Взаимный выбор
+        <span nz-icon nzType="check" nzTheme="outline"></span>
+      </nz-tag>
+      <nz-tag [nzColor]="'default'">
+        Односторонний выбор
+        <span nz-icon nzType="check" nzTheme="outline"></span>
+      </nz-tag>
+      <nz-tag [nzColor]="'#1890ff'">
+        Клетка совпадения
+        <span nz-icon nzType="minus-square" nzTheme="outline"></span>
+      </nz-tag>
+    </div>
+
+  </div>
+</div>
+<div style="margin-top: 1rem;">
+  <app-table></app-table>
+</div>
+
